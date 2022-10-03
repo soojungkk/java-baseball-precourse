@@ -20,7 +20,7 @@ public class BallAndStrikeTest {
         input.add(2);
         input.add(5);
         Answer result = BallAndStrike.check(answer,input);
-        assertThat(result.getBall()).isEqualTo(2);
+        assertThat(result.getStrike()).isEqualTo(2);
     }
 
     @Test
