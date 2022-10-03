@@ -33,34 +33,25 @@ public class BaseballGame {
 
             //정답을 맞추면 재시작 여부 체크
             if(answer.getStrike()==3){
-                System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
-                System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-                boolean restartYn = checkRestartYn();
-                if(!restartYn){
-                    return false;
-                }
-                return true;
+                return checkRestartYn();
             }
         }
     }
 
     private boolean checkRestartYn() {
-        boolean restartYn = false;
+        System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
         String input = Console.readLine();
         if(!CheckValidation.sizeCheck(input,1) || !CheckValidation.isNumeric(input)) {
             //잘못된 값이 들어오면 IllegalArgumentException 하고 전체종료한다.
             throw new IllegalArgumentException();
         }
-        int restart = Integer.parseInt(input);
         //1이나 2가 아니면
-        if(restart != 1 && restart != 2 ){
+        if(!input.equals("1") && !input.equals("2") ){
             //잘못된 값이 들어오면 IllegalArgumentException 하고 전체종료한다.
             throw new IllegalArgumentException();
         }
-        if(restart == 1){
-            restartYn = true;
-        }
-        return restartYn;
+        return input.equals("1");
     }
 
     private String readInputData() {
