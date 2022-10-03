@@ -11,12 +11,18 @@ public class BaseballGame {
 
         while(true){
 
+            //랜덤3자리를 발생시킨다.
+
+            //데이터를 입력받는다.
             String inputData = readInputData();
 
-            //inputno 이 3자리인지 아닌지 유효성체크
-            //System.out.println(inputData + "유효성체크..");
+            //inputData 유효성체크
+            if(!CheckValidation.sizeCheck(inputData) || !CheckValidation.isNumeric(inputData)) {
+                //잘못된 값이 들어오면 IllegalArgumentException 하고 전체종료한다.
+                throw new IllegalArgumentException();
+            }
 
-            //난수와 비교
+            //볼스트라이크여부를 판단
 
             //결과출력
 
@@ -27,7 +33,7 @@ public class BaseballGame {
     }
 
     private String readInputData() {
-        System.out.println("숫자를 입력해주세요 : ");
+        System.out.print("숫자를 입력해주세요 : ");
         return Console.readLine();
     }
 }
