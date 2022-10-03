@@ -19,7 +19,7 @@ public class BaseballGame {
             String inputData = readInputData();
 
             //inputData 유효성체크
-            if(!CheckValidation.sizeCheck(inputData,3) || !CheckValidation.isNumeric(inputData)) {
+            if(!CheckValidation.sizeCheck(inputData,3) || !CheckValidation.isNumeric(inputData) || !CheckValidation.numberRangeCheck(inputData)) {
                 //잘못된 값이 들어오면 IllegalArgumentException 하고 전체종료한다.
                 throw new IllegalArgumentException();
             }

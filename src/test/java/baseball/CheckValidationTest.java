@@ -29,4 +29,10 @@ public class CheckValidationTest {
         boolean result = CheckValidation.isNumeric("123");
         assertThat(result).isTrue();
     }
+
+    @Test
+    void 숫자범위체크(){
+        boolean result = CheckValidation.numberRangeCheck("012");
+        assertThat(result).isFalse();
+    }
 }
