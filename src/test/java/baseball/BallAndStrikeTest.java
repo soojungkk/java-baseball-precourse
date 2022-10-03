@@ -32,8 +32,14 @@ public class BallAndStrikeTest {
         List<Integer> input = new ArrayList<Integer>();
         input.add(2);
         input.add(4);
-        input.add(5);
+        input.add(3);
         Answer result = BallAndStrike.check(answer,input);
         assertThat(result.getBall()).isEqualTo(1);
+        assertThat(result.getStrike()).isEqualTo(1);
+    }
+
+    @Test
+    void 스코어_변환(){
+        Answer answer = new Answer(1,2);
     }
 }

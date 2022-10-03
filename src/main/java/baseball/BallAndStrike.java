@@ -6,8 +6,8 @@ import java.util.Objects;
 public class BallAndStrike {
     public static Answer check(List<Integer> answer, List<Integer> input) {
         Answer score = new Answer(0,0);
-        score.setBall(countBall(answer,input));
         score.setStrike(countStrike(answer,input));
+        score.setBall(countBall(answer,input)-countStrike(answer,input));
 
         return score;
     }
