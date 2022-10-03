@@ -13,9 +13,10 @@ public class BaseballGame {
 
     public boolean start(){
         List<Integer> answerNumbers = new ArrayList<>();
+        List<Integer> inputNumbers = new ArrayList<>();
         //랜덤3자리를 발생시킨다.
         answerNumbers = RandomUtils.makeAnswerNumbers();
-        System.out.println(">>>> : "+answerNumbers.toString());
+        //System.out.println(">>>> : "+answerNumbers.toString());
         while(true){
 
             //데이터를 입력받는다.
@@ -26,10 +27,13 @@ public class BaseballGame {
                 //잘못된 값이 들어오면 IllegalArgumentException 하고 전체종료한다.
                 throw new IllegalArgumentException();
             }
+            inputNumbers = ConvertUtils.StringToList(inputData);
 
             //볼스트라이크여부를 판단
+            Answer answer = BallAndStrike.check(answerNumbers,inputNumbers);
 
             //결과출력
+
 
             //재시작 여부 체크
 
