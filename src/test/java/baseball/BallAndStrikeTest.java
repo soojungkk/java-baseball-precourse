@@ -40,6 +40,14 @@ public class BallAndStrikeTest {
 
     @Test
     void 스코어_변환(){
-        Answer answer = new Answer(1,2);
+        Answer answer = new Answer(0,0);
+        String result = BallAndStrike.printScore(answer);
+        assertThat(result).isEqualTo("낫싱");
+    }
+    @Test
+    void 스코어_변환_2(){
+        Answer answer = new Answer(1,1);
+        String result = BallAndStrike.printScore(answer);
+        assertThat(result).isEqualTo("1볼 1스트라이크");
     }
 }

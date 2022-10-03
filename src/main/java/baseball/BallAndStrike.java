@@ -6,9 +6,10 @@ import java.util.Objects;
 public class BallAndStrike {
     public static Answer check(List<Integer> answer, List<Integer> input) {
         Answer score = new Answer(0,0);
-        score.setStrike(countStrike(answer,input));
-        score.setBall(countBall(answer,input)-countStrike(answer,input));
-
+        int strike  = countStrike(answer,input);
+        int ball    = countBall(answer,input);
+        score.setStrike(strike);
+        score.setBall(ball-strike);
         return score;
     }
 
@@ -30,5 +31,21 @@ public class BallAndStrike {
             }
         }
         return ball;
+    }
+
+
+    public static String printScore(Answer answer) {
+        StringBuffer printValue = new StringBuffer();
+
+        if(answer.getBall()==0 && answer.getStrike()==0){
+            printValue.append("낫싱");
+        }
+        if(answer.getBall()>0){
+            printValue.append(answer.getBall()+"볼 ");
+        }
+        if(answer.getStrike()>0){
+            printValue.append(answer.getStrike()+"스트라이크");
+        }
+        return printValue.toString();
     }
 }
