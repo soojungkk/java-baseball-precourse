@@ -2,8 +2,8 @@ package baseball;
 
 public class CheckValidation {
 
-    public static boolean sizeCheck(String inputNo) {
-        if(inputNo.length() != 3){
+    public static boolean sizeCheck(String inputNo,int numberSize) {
+        if(inputNo.length() != numberSize){
             return false;
         }
         return true;

@@ -8,13 +8,13 @@ public class CheckValidationTest {
 
     @Test
     void 자리수_검증(){
-        boolean result = CheckValidation.sizeCheck("123");
+        boolean result = CheckValidation.sizeCheck("123",3);
         assertThat(result).isTrue();
     }
 
     @Test
     void 자리수_검증_2(){
-        boolean result = CheckValidation.sizeCheck("1234");
+        boolean result = CheckValidation.sizeCheck("1234",3);
         assertThat(result).isFalse();
     }
 
