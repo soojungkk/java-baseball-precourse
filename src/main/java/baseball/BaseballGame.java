@@ -1,6 +1,10 @@
 package baseball;
 
 import camp.nextstep.edu.missionutils.Console;
+import camp.nextstep.edu.missionutils.Randoms;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -8,10 +12,11 @@ import camp.nextstep.edu.missionutils.Console;
 public class BaseballGame {
 
     public boolean start(){
-
+        List<Integer> answerNumbers = new ArrayList<>();
+        //랜덤3자리를 발생시킨다.
+        answerNumbers = RandomUtils.makeAnswerNumbers();
+        System.out.println(">>>> : "+answerNumbers.toString());
         while(true){
-
-            //랜덤3자리를 발생시킨다.
 
             //데이터를 입력받는다.
             String inputData = readInputData();
