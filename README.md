@@ -17,10 +17,11 @@
   - 숫자가 아닌 다른문자가 들어오면 IllegalArgumentException 발생
 
 
-* 랜덤숫자 생성
+* 랜덤숫자 생성 (RandomUtils)
   - camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()을 사용한다
   - 1부터 9까지 서로 다른 수로 이루어진 3자리의 수
 
+* 입력값을 비교를 위해 List 타입으로 변환 (ConvertUtils)
 
 * 볼스트라이크 여부 확인
   - 같은 수가 같은 자리에 있으면 스트라이크
